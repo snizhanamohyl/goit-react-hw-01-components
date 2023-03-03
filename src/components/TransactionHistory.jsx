@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
+
 export default function TransactionHistory({ items }) {
-    console.log("🚀 ~ file: TransactionHistory.jsx:2 ~ TransactionHistory ~ items:", items)
     return <table className="transaction-history">
   <thead>
     <tr>
@@ -17,4 +18,14 @@ export default function TransactionHistory({ items }) {
     </tr>)}
   </tbody>
 </table>
+}
+
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    amount: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
+  })),
 }

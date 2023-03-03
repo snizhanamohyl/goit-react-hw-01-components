@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function Profile({ avatar = "https://cdn-icons-png.flaticon.com/512/1077/1077012.png", username, tag, location, stats }) {
   return <div className="profile">
       <div className="description">
@@ -22,4 +24,16 @@ export default function Profile({ avatar = "https://cdn-icons-png.flaticon.com/5
         </li>
       </ul>
     </div>
+}
+
+Profile.propTypes = {
+  avatar: PropTypes.string,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    followers: PropTypes.number.isRequired,
+    followers: PropTypes.number.isRequired,
+  }),
 }
