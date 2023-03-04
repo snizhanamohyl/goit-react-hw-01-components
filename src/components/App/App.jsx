@@ -11,7 +11,7 @@ import transactions from 'transactions.json';
 export default function App() {
   return <div>
     <Profile avatar={user.avatar} username={user.username} tag={user.tag} location={user.location} stats={user.stats} />
-    <Statistics stats={statsInfo} />
+    <Statistics stats={statsInfo} title="Upload stats" />
     <FriendList friends={friends} />
     <TransactionHistory items={transactions} />
   </div>
